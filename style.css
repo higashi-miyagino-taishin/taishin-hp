@@ -413,6 +413,15 @@ main {
     color: var(--color-primary);
 }
 
+/* Gallery Notice (準備中案内文) */
+.gallery-notice {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888888;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
 /* Flow (申し込みの流れ) */
 .flow-steps {
     display: flex;
