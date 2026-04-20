@@ -265,18 +265,21 @@ class BlurEditorApp:
     # キャンバス描画
     # ──────────────────────────
     def _refresh_canvas(self):
-        """work_cv を表示サイズにリサイズしてキャンバスに描画（確定済み矩形を青枠で表示）"""
+        """work_cv を表示サイズにリサイズしてキャンバスに描画（確定済み楕円を青枠で表示）"""
         disp_img = cv2.resize(
             self.work_cv, (self.disp_w, self.disp_h),
             interpolation=cv2.INTER_AREA
         )
-        # 確定済み矩形を青枠で可視化
+        # 確定済み領域を楕円の青枠で可視化
         for (x1, y1, x2, y2) in self.confirmed_rects:
             dx1 = int(x1 * self.scale)
             dy1 = int(y1 * self.scale)
             dx2 = int(x2 * self.scale)
             dy2 = int(y2 * self.scale)
-            cv2.rectangle(disp_img, (dx1, dy1), (dx2, dy2), (255, 180, 0), 2)
+            cx = (dx1 + dx2) // 2
+            cy = (dy1 + dy2) // 2
+            axes = ((dx2 - dx1) // 2, (dy2 - dy1) // 2)
+            cv2.ellipse(disp_img, (cx, cy), axes, 0, 0, 360, (255, 180, 0), 2)
 
         rgb = cv2.cvtColor(disp_img, cv2.COLOR_BGR2RGB)
         pil_img = Image.fromarray(rgb)
@@ -347,8 +350,30 @@ class BlurEditorApp:
     # ──────────────────────────
     # ぼかし操作
     # ──────────────────────────
+    def _apply_ellipse_blur(self, img: np.ndarray, ox1: int, oy1: int, ox2: int, oy2: int):
+        """
+        img の (ox1,oy1)-(ox2,oy2) の矩形内にぴったり収まる楕円だけを
+        ガウシアンぼかしし、楕円外（四隅）は元のピクセルを維持する。
+        """
+        roi = img[oy1:oy2, ox1:ox2]
+        rh, rw = roi.shape[:2]
+
+        # カーネルサイズ（奇数保証）
+        ksize = max(BLUR_KERNEL, (max(rw, rh) // 5) | 1)
+        blurred_roi = cv2.GaussianBlur(roi, (ksize, ksize), 0)
+
+        # 楕円マスク（白=ぼかし領域、黒=元画像領域）
+        mask = np.zeros((rh, rw), dtype=np.uint8)
+        cx, cy = rw // 2, rh // 2
+        cv2.ellipse(mask, (cx, cy), (rw // 2, rh // 2), 0, 0, 360, 255, -1)
+
+        # マスクを 3ch に拡張して合成
+        mask3 = cv2.merge([mask, mask, mask])
+        combined = np.where(mask3 == 255, blurred_roi, roi)
+        img[oy1:oy2, ox1:ox2] = combined
+
     def _confirm_region(self):
-        """現在の選択範囲にガウシアンぼかしを適用して確定"""
+        """現在の選択範囲（楕円）にガウシアンぼかしを適用して確定"""
         if self.current_rect is None:
             self.status_var.set("⚠ 先にドラッグで範囲を選択してください。")
             return
@@ -368,11 +393,8 @@ class BlurEditorApp:
             self.status_var.set("⚠ 範囲が小さすぎます。")
             return
 
-        # ガウシアンぼかし適用
-        roi = self.work_cv[oy1:oy2, ox1:ox2]
-        ksize = max(BLUR_KERNEL, (max(ox2 - ox1, oy2 - oy1) // 5) | 1)  # 奇数保証
-        blurred = cv2.GaussianBlur(roi, (ksize, ksize), 0)
-        self.work_cv[oy1:oy2, ox1:ox2] = blurred
+        # 楕円ぼかし適用
+        self._apply_ellipse_blur(self.work_cv, ox1, oy1, ox2, oy2)
 
         # 確定済みリストに追加
         self.confirmed_rects.append((ox1, oy1, ox2, oy2))
@@ -383,7 +405,7 @@ class BlurEditorApp:
         self.canvas.delete("sel_rect")
         n = len(self.confirmed_rects)
         self.status_var.set(
-            f"✅ ぼかしを適用しました（計 {n} 箇所）。続けて範囲を選択するか「保存」してください。"
+            f"✅ ぼかし（楕円）を適用しました（計 {n} 箇所）。続けて範囲を選択するか「保存」してください。"
         )
 
     def _on_enter(self, event):
@@ -402,13 +424,10 @@ class BlurEditorApp:
             self.status_var.set("⚠ 取り消せる操作がありません。")
             return
         self.confirmed_rects.pop()
-        # work_cv を orig から再構築
+        # work_cv を orig から再構築（楕円ぼかしを再適用）
         self.work_cv = self.orig_cv.copy()
         for (ox1, oy1, ox2, oy2) in self.confirmed_rects:
-            roi = self.work_cv[oy1:oy2, ox1:ox2]
-            ksize = max(BLUR_KERNEL, (max(ox2 - ox1, oy2 - oy1) // 5) | 1)
-            blurred = cv2.GaussianBlur(roi, (ksize, ksize), 0)
-            self.work_cv[oy1:oy2, ox1:ox2] = blurred
+            self._apply_ellipse_blur(self.work_cv, ox1, oy1, ox2, oy2)
         self._refresh_canvas()
         n = len(self.confirmed_rects)
         self.status_var.set(f"↩ 1件取り消しました（残り {n} 箇所）。")
