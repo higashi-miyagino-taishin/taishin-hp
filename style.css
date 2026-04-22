@@ -619,23 +619,24 @@ main {
     /* About */
     .about-content {
         padding: 40px;
-        display: flex;
-        gap: 50px;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .about-greeting {
-        flex: 1;
         margin-bottom: 0;
     }
 
     .about-outline {
-        flex: 1;
+        margin-top: 60px;
     }
 
     .outline-list {
         display: grid;
-        grid-template-columns: 100px 1fr;
+        grid-template-columns: 120px 1fr;
         gap: 15px;
+        width: 100%;
     }
 
     .outline-list dt {
@@ -789,6 +790,14 @@ main {
 .greeting-text {
     width: 100%;
 }
+.greeting-text p {
+    line-height: 1.9;
+    color: var(--color-text-light);
+    margin-top: 1em;
+}
+.greeting-text p:first-child {
+    margin-top: 0;
+}
 @media (max-width: 991px) {
     /* タブレット・スマートフォン：縦並び・写真中央 */
     .greeting-box {
@@ -804,7 +813,7 @@ main {
     }
 }
 @media (min-width: 992px) {
-    /* PC：横並び */
+    /* PC：写真＋テキスト横並び */
     .greeting-box {
         flex-direction: row;
         align-items: flex-start;
