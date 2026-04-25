@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>親睦ソフトボール大会 参加者募集ポスター</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --main-blue: #005088;
+            --accent-yellow: #facc15;
+            --text-dark: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f1f5f9;
+            font-family: 'Noto Sans JP', sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+
+        .poster-canvas {
+            width: 210mm;
+            height: 297mm;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .visual-area {
+            height: 55%;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visual-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        .info-area {
+            height: 45%;
+            padding: 40px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .title-block {
+            margin-bottom: 20px;
+        }
+
+        .org-label {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--main-blue);
+            margin-bottom: 5px;
+        }
+
+        .main-title {
+            font-size: 44px;
+            font-weight: 900;
+            color: var(--main-blue);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .main-title span {
+            color: #d97706;
+        }
+
+        .catchphrase {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 10px;
+            color: #475569;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .detail-row {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .detail-label {
+            background-color: var(--main-blue);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 16px;
+            min-width: 100px;
+            text-align: center;
+            margin-right: 20px;
+        }
+
+        .detail-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .detail-sub {
+            font-size: 14px;
+            font-weight: 400;
+            color: #64748b;
+            margin-left: 10px;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 30px;
+        }
+
+        .footer-left ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 16px; 
+            color: #334155;
+            line-height: 1.8;
+        }
+
+        .footer-left li strong {
+            color: var(--main-blue);
+            margin-right: 5px;
+        }
+
+        .qr-section {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .qr-code {
+            width: 110px; 
+            height: 110px;
+            margin-bottom: 5px;
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .qr-label {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--main-blue);
+            margin-bottom: 2px;
+        }
+
+        .qr-url {
+            font-size: 11px;
+            color: var(--main-blue);
+            font-family: monospace;
+        }
+
+        @media print {
+            body { background: none; }
+            .poster-canvas { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="poster-canvas">
+        <div class="visual-area">
+            <img src="images/softball/cook-99ac68c7-7527-49cc-945b-daa008dbd694.jpg" alt="ソフトボール大会メインビジュアル">
+        </div>
+
+        <div class="info-area">
+            <div class="title-block">
+                <div class="org-label">東宮城野学区民体育振興会</div>
+                <h1 class="main-title">親睦ソフトボール大会 <span>参加者募集！</span></h1>
+                <div class="catchphrase">未経験者OK！地域の仲間と爽やかな汗を流そう！</div>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-row">
+                    <div class="detail-label">日時</div>
+                    <div class="detail-value">
+                        2026年5月17日（日）
+                        <span class="detail-sub">※雨天中止</span>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">場所</div>
+                    <div class="detail-value">
+                        東宮城野小学校グラウンド
+                        <span class="detail-sub">※駐車場に限りがありますのでご配慮ください</span>
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">対象</div>
+                    <div class="detail-value">
+                        東宮城野学区にお住まいの方（18歳以上）
+                    </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">参加費</div>
+                    <div class="detail-value" style="color: #16a34a;">無料</div>
+                </div>
+            </div>
+
+            <div class="footer-info">
+                <div class="footer-left">
+                    <ul>
+                        <li><strong>●持ち物：</strong>運動しやすい服装、グローブ（貸出可）、飲み物</li>
+                        <li><strong>●申込方法：</strong>右記QRコードまたはURLよりお申し込みください</li>
+                        <li><strong>●申込締切：</strong>5月13日（水）まで</li>
+                        <li style="font-size: 14px; margin-top: 15px;">主催：東宮城野学区民体育振興会</li>
+                    </ul>
+                </div>
+                <div class="qr-section">
+                    <div class="qr-label">ホームページから申し込み▶</div>
+                    <div class="qr-code">
+                        <img src="images/QR_081670.png" alt="お申し込み用QRコード">
+                    </div>
+                    <div class="qr-url">https://higashi-miyagino-taishin.github.io/taishin-hp/</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
