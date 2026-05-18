@@ -51,232 +51,69 @@
             </div>
         </section>
 
-        <!-- 募集案内・ポスター -->
+        <!-- 活動報告 -->
         <section class="section bg-light">
             <div class="container">
-                <h2 class="section-title">参加者募集<span>Information</span></h2>
-                <div style="text-align: center;">
-                    <img
-                        src="images/softball/親睦ソフトボール大会2026ポスター.png"
-                        alt="親睦ソフトボール大会2026 ポスター"
-                        style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);"
-                    >
-                    <div style="margin-top: 28px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
-                        <a
-                            href="images/softball/親睦ソフトボール大会2026ポスター.png"
-                            download
-                            style="
-                                display: inline-block;
-                                padding: 16px 40px;
-                                background-color: #005088;
-                                color: #fff;
-                                text-decoration: none;
-                                font-size: 1rem;
-                                font-weight: bold;
-                                border-radius: 30px;
-                                box-shadow: 0 4px 12px rgba(0, 80, 136, 0.35);
-                                transition: opacity 0.3s, transform 0.3s;
-                            "
-                            onmouseover="this.style.opacity=0.85; this.style.transform='translateY(-2px)'"
-                            onmouseout="this.style.opacity=1; this.style.transform='translateY(0)'"
-                        >📥 ポスター画像をダウンロード</a>
-                    </div>
-                    <div style="
-                        margin-top: 32px;
-                        padding: 24px 32px;
-                        background-color: #fff3cd;
-                        border: 2px solid #e6ac00;
-                        border-radius: 12px;
-                        text-align: center;
-                        box-shadow: 0 2px 10px rgba(230, 172, 0, 0.15);
-                    ">
-                        <p style="
-                            font-size: 1.05rem;
-                            font-weight: bold;
-                            color: #7a5c00;
-                            margin: 0;
-                            line-height: 1.7;
-                        ">
-                            ⚾ 受付終了<br>
-                            今年度の親睦ソフトボール大会の申し込み受付は終了いたしました。<br>
-                            多数のお申し込み、誠にありがとうございました。<br>
-                            当日のご来場をお待ちしております！
-                        </p>
-                    </div>
+                <h2 class="section-title">活動報告：2026年 親睦ソフトボール大会<span>Report</span></h2>
+                <div style="max-width: 800px; margin: 0 auto 40px; text-align: center; line-height: 1.8;">
+                    <p>5月17日（日）、天候にも恵まれ、本年度の親睦ソフトボール大会が盛大に開催されました。ご参加いただいた皆様、また運営にご協力いただいた皆様、誠にありがとうございました。白熱した試合と、笑顔あふれる交流の様子をお届けします。</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- 当日のタイムスケジュール -->
-        <section class="section bg-light">
-            <div class="container">
-                <h2 class="section-title">当日のタイムスケジュール<span>Schedule</span></h2>
-                <div style="
-                    max-width: 600px;
-                    margin: 0 auto;
-                    background: #ffffff;
-                    border: 2px solid #c8ddf0;
-                    border-radius: 16px;
-                    padding: 36px 40px 36px 40px;
-                    box-shadow: 0 4px 18px rgba(0, 80, 136, 0.08);
-                ">
-                    <p style="
-                        text-align: center;
-                        font-size: 1.05rem;
-                        color: #005088;
-                        font-weight: bold;
-                        margin-bottom: 28px;
-                        letter-spacing: 0.05em;
-                    ">🕐 当日のタイムスケジュール</p>
-
-                    <!-- タイムライン本体 -->
-                    <ol style="
-                        list-style: none;
-                        margin: 0;
-                        padding: 0;
-                        position: relative;
-                    ">
-                        <!-- 縦線 -->
-                        <style>
-                            .timeline-list {
-                                position: relative;
-                            }
-                            .timeline-list::before {
-                                content: '';
-                                position: absolute;
-                                left: 10px;
-                                top: 8px;
-                                bottom: 8px;
-                                width: 3px;
-                                background: linear-gradient(to bottom, #005088, #4a9fd4);
-                                border-radius: 3px;
-                            }
-                            .timeline-item {
-                                display: flex;
-                                align-items: flex-start;
-                                gap: 18px;
-                                margin-bottom: 28px;
-                                position: relative;
-                            }
-                            .timeline-item:last-child {
-                                margin-bottom: 0;
-                            }
-                            .timeline-dot {
-                                flex-shrink: 0;
-                                width: 23px;
-                                height: 23px;
-                                background: #005088;
-                                border: 3px solid #ffffff;
-                                border-radius: 50%;
-                                box-shadow: 0 0 0 2px #005088;
-                                margin-top: 1px;
-                                z-index: 1;
-                            }
-                            .timeline-item:last-child .timeline-dot {
-                                background: #e07b00;
-                                box-shadow: 0 0 0 2px #e07b00;
-                            }
-                            .timeline-body {
-                                flex: 1;
-                                line-height: 1.55;
-                            }
-                            .timeline-time {
-                                font-weight: 700;
-                                color: #003f70;
-                                font-size: 1.0rem;
-                                display: block;
-                                margin-bottom: 2px;
-                            }
-                            .timeline-label {
-                                color: #333;
-                                font-size: 0.97rem;
-                            }
-                            @media (max-width: 480px) {
-                                .timeline-time {
-                                    font-size: 0.95rem;
-                                }
-                                .timeline-label {
-                                    font-size: 0.92rem;
-                                }
-                            }
-                        </style>
-
-                        <ol class="timeline-list" style="list-style:none; margin:0; padding:0 0 0 0;">
-                            <li class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-body">
-                                    <span class="timeline-time">08:00</span>
-                                    <span class="timeline-label">集合・グラウンド設営</span>
-                                </div>
-                            </li>
-                            <li class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-body">
-                                    <span class="timeline-time">08:30</span>
-                                    <span class="timeline-label">開会式</span>
-                                </div>
-                            </li>
-                            <li class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-body">
-                                    <span class="timeline-time">09:00</span>
-                                    <span class="timeline-label">試合開始</span>
-                                </div>
-                            </li>
-                            <li class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-body">
-                                    <span class="timeline-time">試合終了後</span>
-                                    <span class="timeline-label">閉会式・グラウンド整備</span>
-                                </div>
-                            </li>
-                            <li class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-body">
-                                    <span class="timeline-time" style="color: #e07b00;">11:30</span>
-                                    <span class="timeline-label" style="font-weight:600;">終了予定</span>
-                                </div>
-                            </li>
-                        </ol>
-                    </ol>
-                </div>
-            </div>
-        </section>
-
-        <!-- 活動ギャラリー -->
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">活動ギャラリー<span>Gallery</span></h2>
-                <p class="gallery-notice">※掲載している写真は過去の活動の様子です。今年度のイベント写真ではありませんが、当会の雰囲気を知っていただくためのイメージとしてご覧ください。</p>
-                <div class="gallery-grid">
+                
+                <style>
+                    .report-gallery {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 15px;
+                    }
+                    .report-gallery .gallery-img {
+                        margin-bottom: 0;
+                    }
+                    @media (min-width: 768px) {
+                        .report-gallery {
+                            grid-template-columns: repeat(4, 1fr);
+                            gap: 20px;
+                        }
+                    }
+                </style>
+                <div class="report-gallery">
                     <div class="gallery-item">
                         <div class="gallery-img">
-                            <img src="images/softball/softball_01.jpg" alt="ソフトボール部の活動写真1">
+                            <img src="images/softball_2026/softball-2026-01.jpg" alt="ソフトボール大会の様子1">
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-img">
-                            <img src="images/softball/softball_02.jpg" alt="ソフトボール部の活動写真2">
+                            <img src="images/softball_2026/softball-2026-02.jpg" alt="ソフトボール大会の様子2">
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-img">
-                            <img src="images/softball/softball_03.jpg" alt="ソフトボール部の活動写真3">
+                            <img src="images/softball_2026/softball-2026-03.jpg" alt="ソフトボール大会の様子3">
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-img">
-                            <img src="images/softball/softball_04.jpg" alt="ソフトボール部の活動写真4">
+                            <img src="images/softball_2026/softball-2026-04.jpg" alt="ソフトボール大会の様子4">
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-img">
-                            <img src="images/softball/softball_05.jpg" alt="ソフトボール部の活動写真5">
+                            <img src="images/softball_2026/softball-2026-05.jpg" alt="ソフトボール大会の様子5">
                         </div>
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-img">
-                            <img src="images/softball/softball_06.jpg" alt="ソフトボール部の活動写真6">
+                            <img src="images/softball_2026/softball-2026-06.jpg" alt="ソフトボール大会の様子6">
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-img">
+                            <img src="images/softball_2026/softball-2026-07.jpg" alt="ソフトボール大会の様子7">
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-img">
+                            <img src="images/softball_2026/softball-2026-08.jpg" alt="ソフトボール大会の様子8">
                         </div>
                     </div>
                 </div>
