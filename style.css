@@ -1090,5 +1090,114 @@ main {
     }
 }
 
+/* Event Poster & Grid Layout */
+.event-layout-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.event-poster-col {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.event-poster-link {
+    display: block;
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(24, 27, 56, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.event-poster-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    opacity: 1;
+}
+
+.event-poster-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.event-poster-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: rgba(24, 27, 56, 0.9);
+    color: #fff;
+    font-size: 0.82rem;
+    padding: 7px 10px;
+    text-align: center;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.event-poster-link:hover .event-poster-caption {
+    background-color: var(--color-primary);
+}
+
+.event-detail-col {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (min-width: 860px) {
+    .event-card {
+        max-width: 980px;
+    }
+    .event-layout-grid {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 32px;
+    }
+    .event-poster-col {
+        width: 320px;
+        flex-shrink: 0;
+        position: sticky;
+        top: calc(var(--header-height) + 20px);
+    }
+}
+
+/* Event Form Section (Direct Google Form Embed) */
+.event-form-section {
+    max-width: 860px;
+    margin: 50px auto 0;
+}
+
+.event-form-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.event-form-title {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.event-form-desc {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+
 
 
