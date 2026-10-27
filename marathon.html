@@ -30,6 +30,20 @@
                 gap: 10px;
             }
         }
+        .report-gallery.report-gallery-2col {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width: 640px) {
+            .report-gallery.report-gallery-2col {
+                grid-template-columns: 1fr;
+                gap: 14px;
+                width: 100%;
+            }
+            .report-gallery.report-gallery-2col .gallery-item,
+            .report-gallery.report-gallery-2col .gallery-img img {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -108,27 +122,61 @@
         </section>
 
         <!-- セクション2：全日本大学女子駅伝 -->
-        <section class="section bg-light">
+        <section id="report-ekiden-2026" class="section bg-light">
             <div class="container">
                 <h2 class="section-title">全日本大学女子駅伝<span>All Japan University Women's Ekiden</span></h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <div class="photo-placeholder">準備中</div>
+
+                <div class="report-card">
+                    <div class="report-card-header">
+                        <div class="report-meta-tags">
+                            <span class="report-status-badge">活動報告</span>
+                            <span class="report-date-tag">実施日：2026年10月25日（日）</span>
+                        </div>
+                        <h3 class="report-card-title">第44回全日本大学女子駅伝 沿道整理事業</h3>
                     </div>
-                    <div class="gallery-item">
-                        <div class="photo-placeholder">準備中</div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="photo-placeholder">準備中</div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="photo-placeholder">準備中</div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="photo-placeholder">準備中</div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="photo-placeholder">準備中</div>
+
+                    <div class="report-card-body">
+                        <div class="report-info-box">
+                            <div class="report-info-item">
+                                <span class="report-info-label">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    実施日
+                                </span>
+                                <span class="report-info-val">2026年10月25日（日）</span>
+                            </div>
+                            <div class="report-info-item">
+                                <span class="report-info-label">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                    事業・行事名
+                                </span>
+                                <span class="report-info-val">第44回全日本大学女子駅伝 沿道整理事業</span>
+                            </div>
+                        </div>
+
+                        <div class="report-lead-text">
+                            <p>仙台市内を舞台に開催された「第44回全日本大学女子駅伝」において、当会役員・関係者にて担当区間の沿道整理業務に従事いたしました。雨天の中での活動となりましたが、事故なく無事にランナーの安全走路を確保し、大会の円滑な運営に貢献いたしました。雨にも負けず懸命にタスキをつなぐ大学生ランナーの熱い走りに、沿道からも大きな感動と声援が送られました。</p>
+                        </div>
+
+                        <div class="report-gallery-header">
+                            <h4 class="report-gallery-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                                当日の様子（写真ギャラリー）
+                            </h4>
+                            <span class="report-gallery-sub">※写真をクリック（タップ）すると拡大表示されます</span>
+                        </div>
+
+                        <div class="report-gallery report-gallery-2col">
+                            <div class="gallery-item">
+                                <div class="gallery-img">
+                                    <img src="images/大学女子駅伝/2026/IMG_2888.jpg" alt="第44回全日本大学女子駅伝 沿道整理事業の様子1" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <div class="gallery-img">
+                                    <img src="images/大学女子駅伝/2026/IMG_2889.jpg" alt="第44回全日本大学女子駅伝 沿道整理事業の様子2" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
