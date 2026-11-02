@@ -144,7 +144,7 @@
                                 新着情報へ戻る
                             </a>
                             <a href="#entry-volleyball" class="report-back-btn" style="background-color: var(--color-primary); color: #fff; border-color: var(--color-primary);">
-                                11/15開催「親睦ソフトバレーボール大会」募集要項へ
+                                11/15開催「親睦ソフトバレーボール大会」開催案内へ
                                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
                             </a>
                         </div>
@@ -153,23 +153,29 @@
             </div>
         </section>
 
-        <!-- 親睦ソフトバレーボール大会2026 参加者募集 -->
+        <!-- 親睦ソフトバレーボール大会2026 開催案内 -->
         <section id="entry-volleyball" class="section bg-light">
             <div class="container">
-                <h2 class="section-title">親睦ソフトバレーボール大会2026<span>Recruit</span></h2>
-                <p class="section-desc">バレーボール部主催の親睦ソフトバレーボール大会を開催いたします！皆さまのご参加をお待ちしております。</p>
+                <h2 class="section-title">親睦ソフトバレーボール大会2026<span>Event Info</span></h2>
+                <p class="section-desc">バレーボール部主催「親睦ソフトバレーボール大会2026」の開催案内です（参加申込みの受付は終了いたしました）。</p>
                 
                 <div class="event-card">
                     <div class="event-card-header">
                         <div class="event-card-meta">
-                            <span class="event-status-badge">参加者募集中</span>
-                            <span class="event-deadline-tag">申込締切：2026年10月31日（土）まで</span>
+                            <span class="event-status-badge closed">受付終了（定員・期日締切）</span>
+                            <span class="event-deadline-tag">申込締切：2026年10月31日（土）※受付終了</span>
                         </div>
                         <h3 class="event-card-title">親睦ソフトバレーボール大会2026</h3>
                         <p class="event-card-subtitle">柔らかいボールを使用するため、初心者・未経験者やお子さまでも安全に楽しめます！地域の仲間や親子で楽しく汗を流しましょう。</p>
                     </div>
 
                     <div class="event-card-body">
+                        <!-- 受付終了案内バナー -->
+                        <div class="event-closed-banner" role="status">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                            <div>参加申込みの受付は終了いたしました。たくさんのお申込みをいただき、誠にありがとうございました。</div>
+                        </div>
+
                         <div class="event-layout-grid">
                             <!-- 左カラム：ポスター画像 -->
                             <div class="event-poster-col">
@@ -238,35 +244,20 @@
                                         </tr>
                                         <tr>
                                             <th>申込締切</th>
-                                            <td><span class="event-highlight-deadline">2026年10月31日（土）まで</span></td>
+                                            <td><span class="event-highlight-deadline">2026年10月31日（土）まで ※受付終了</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
 
-                                <!-- 申込みCTAボタン -->
+                                <!-- 申込みCTAボタン（受付終了・無効化） -->
                                 <div class="event-cta">
-                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBQQbhN8b0xtAUAF8gL-H49k57Uo-PfqgA7o0jDtWVQY5_2Q/viewform" target="_blank" rel="noopener noreferrer" class="btn-entry-form">
-                                        <span>大会参加を申し込む（Googleフォーム）</span>
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                    </a>
-                                    <p class="event-cta-note">※別タブでGoogleフォームが開きます。また、下記フォームからも直接お申込みいただけます。</p>
+                                    <span class="btn-entry-form disabled" aria-disabled="true">
+                                        <span>お申込み受付は終了いたしました</span>
+                                    </span>
+                                    <p class="event-cta-note">※お申込みいただいた皆さまは、当日動きやすい服装・上履きをご持参のうえ会場へお越しください。</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Googleフォーム直接埋め込みエリア -->
-                <div class="event-form-section" id="entry-form">
-                    <div class="event-form-header">
-                        <h3 class="event-form-title">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                            親睦ソフトバレーボール大会2026 参加申込フォーム
-                        </h3>
-                        <p class="event-form-desc">下記の入力フォームに必要事項をご入力の上、送信してください。</p>
-                    </div>
-                    <div class="form-wrapper">
-                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdBQQbhN8b0xtAUAF8gL-H49k57Uo-PfqgA7o0jDtWVQY5_2Q/viewform?embedded=true" width="100%" height="2000" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
                     </div>
                 </div>
             </div>

@@ -1434,8 +1434,50 @@ section[id],
     .report-gallery.report-gallery-2col .gallery-img img {
         width: 100%;
     }
-    /* Fix placeholder Target below */
-    .unused {
+}
+
+/* ==========================================================================
+   Event Closed State (受付終了スタイル)
+   ========================================================================== */
+.event-status-badge.closed {
+    background-color: #dc2626;
+    box-shadow: 0 2px 6px rgba(220, 38, 38, 0.35);
+}
+
+.event-closed-banner {
+    background-color: #fef2f2;
+    border: 2px solid #fca5a5;
+    border-left: 6px solid #dc2626;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #991b1b;
+    font-weight: 700;
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.event-closed-banner svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: #dc2626;
+}
+
+.btn-entry-form.disabled,
+.btn-entry-form[aria-disabled="true"] {
+    background-color: #94a3b8;
+    color: #ffffff;
+    cursor: not-allowed;
+    pointer-events: none;
+    box-shadow: none;
+    transform: none;
+}
+
+.unused {
+    .unused-inner {
         text-align: center;
     }
 }
